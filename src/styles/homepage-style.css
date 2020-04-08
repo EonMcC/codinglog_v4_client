@@ -92,6 +92,9 @@
 .big-btn-wrapper > *:hover {
   background: var(--hover), var(--main);
 }
+.big-btn-wrapper > *:active {
+  transform: translateY(2px);
+}
 
 @media only screen and (max-width: 600px) {
   .big-btn-wrapper > * {

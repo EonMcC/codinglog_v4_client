@@ -54,8 +54,24 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
+        <div className="navbar-links">
+          <Link to="/">Home |</Link>
+          {this.props.currentUser.isAuthenticated && (
+            <Link to="/" onClick={this.logout}>
+              Log Out |
+            </Link>
+          )}
+          {this.props.currentUser.isAuthenticated && (
+            <a onClick={this.handleClickDelete}>Delete Account</a>
+          )}
+        </div>
+
+        <Link to="/" className="header-link">
+          Codinglog v.4
+        </Link>
+
         <div className="color-picker-container">
-          <label htmlFor="color-picker">Theme colour:</label>
+          <label htmlFor="color-picker">Choose theme:</label>
           <input
             className="color-picker-box"
             type="color"
@@ -63,20 +79,6 @@ class Navbar extends Component {
             value={this.state.mainColor}
             onChange={this.changeTheme}
           ></input>
-        </div>
-
-        <Link to="/" className="header-link">
-          Codinglog v.4
-        </Link>
-
-        <div className="navbar-links">
-          <Link to="/">Home</Link>
-          {this.props.currentUser.isAuthenticated && (
-            <Link to="/" onClick={this.logout}>
-              Log Out
-            </Link>
-          )}
-          <a onClick={this.handleClickDelete}>Delete Account</a>
         </div>
       </div>
     );
