@@ -61,6 +61,7 @@
     align-items: center;
     color: var(--light-text);
     justify-content: center;
+    height: 100%;
   }
 
   .navbar > * {
@@ -74,8 +75,9 @@
   }
 
   .navbar-links > * {
-    font-size: 0.9rem;
-    margin-left: 10%;
+    font-size: 0.8rem;
+    margin-left: 1%;
+    margin-bottom: 1%;
     text-align: center;
   }
   .header-link {
