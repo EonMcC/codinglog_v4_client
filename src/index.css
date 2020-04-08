@@ -1,0 +1,25 @@
+:root {
+  --bg: aliceblue;
+  --main: #5858ec;
+  --hover: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+  --light-text: white;
+  --dark-text: #5e5b5b;
+  --border: #383838;
+  --shadow: 4px 4px 4px #383838;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.1rem;
+  background-color: var(--bg);
+}
+
+.main-css {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  height: 100vh;
+}

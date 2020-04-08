@@ -1,0 +1,40 @@
+.language-form-container {
+  height: 50vh;
+  width: 70vw;
+  color: var(--dark-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.language-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.language-form > * {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.language-form h2 {
+  margin-bottom: 10%;
+}
+
+.language-form button {
+  font-size: 1.4rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: var(--main);
+  color: var(--light-text);
+  padding: 2%;
+  margin-top: 10%;
+}
+.language-form button:hover {
+  background: var(--hover), var(--main);
+}

@@ -1,0 +1,81 @@
+.languages-container {
+  height: 50vh;
+  color: var(--dark-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.language-item {
+  background-color: var(--main);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--border);
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: var(--light-text);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.language-item:hover {
+  background: var(--hover), var(--main);
+}
+
+.language-item > * {
+  margin: 1%;
+}
+
+.language-item .language-title {
+  font-size: 1.8rem;
+  margin-bottom: 5%;
+}
+
+.language-item p {
+  font-size: 0.8rem;
+}
+
+.language-item button {
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: var(--main);
+  color: var(--light-text);
+  padding: 2%;
+  margin-top: 10%;
+  width: 50%;
+}
+.language-item button:hover {
+  background: var(--hover), var(--main);
+}
+
+@media only screen and (max-width: 600px) {
+  .language-item {
+    height: 150px;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .language-item .language-title {
+    font-size: 1.1rem;
+    margin-bottom: 2%;
+  }
+
+  .language-item h1 {
+    margin-bottom: 0px;
+  }
+
+  .language-item p {
+    margin-top: 0px;
+    font-size: 0.4rem;
+  }
+
+  .language-item button {
+    margin-top: 1%;
+    width: 50%;
+  }
+}

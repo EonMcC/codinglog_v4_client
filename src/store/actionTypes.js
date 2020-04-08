@@ -1,0 +1,7 @@
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const SET_THEME = "SET_THEME";
+export const ADD_ERROR = "ADD_ERROR";
+export const REMOVE_ERROR = "REMOVE_ERROR";
+export const LOAD_LANGUAGES = "LOAD_LANGUAGES";
+export const REMOVE_LANGUAGE = "REMOVE_LANGUAGE";
+export const ADD_TIMER_TIME = "ADD_TIMER_TIME";

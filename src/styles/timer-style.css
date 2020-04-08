@@ -1,0 +1,25 @@
+.timer button {
+  font-family: inherit;
+  border: 1px solid var(--border);
+  color: var(--light-text);
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.timer-btn-stop {
+  background-color: #701f1f;
+}
+.timer-btn-stop:hover {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    #701f1f;
+}
+
+.timer-btn-start {
+  background-color: #2f882f;
+}
+.timer-btn-start:hover {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    #2f882f;
+}

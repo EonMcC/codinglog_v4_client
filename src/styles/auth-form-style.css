@@ -1,0 +1,38 @@
+.auth-form-container {
+  height: 50vh;
+  width: 70vw;
+  color: var(--dark-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin-top: 2%;
+}
+
+.auth-form > * {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form button {
+  font-size: 1.4rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: var(--main);
+  color: var(--light-text);
+  padding: 2%;
+  margin-top: 10%;
+}
+.auth-form button:hover {
+  background: var(--hover), var(--main);
+}
+
+@media only screen and (max-width: 600px) {
+}
