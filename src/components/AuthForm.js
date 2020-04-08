@@ -10,7 +10,8 @@ class AuthForm extends Component {
     this.state = {
       username: "",
       password: "",
-      startTime: 0
+      startTime: 0,
+      theme: "#2F88A9"
     };
   }
 

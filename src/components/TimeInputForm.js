@@ -47,54 +47,50 @@ class TimeInputForm extends Component {
     return (
       <div>
         {!timerTime && (
-          <div>
-            <div className="time-list-box">
-              <form
-                className="time-form"
-                onSubmit={this.handleSubmit}
-                name="time"
-              >
-                <div>
-                  <label htmlFor="time">{text}</label>
-                  <input
-                    type="number"
-                    name="time"
-                    value={this.state.time}
-                    onChange={this.handleChange}
-                    id="time"
-                    placeholder="Enter minutes"
-                  />
-                </div>
-                <button type="submit">Submit Time</button>
-              </form>
-              <p>or</p>
-              <form onSubmit={this.handleSubmit} name="pomodoro">
-                <button type="submit">Quick Add: 25min</button>
-              </form>
-            </div>
+          <div className="time-list-box">
+            <form
+              className="time-form"
+              onSubmit={this.handleSubmit}
+              name="time"
+            >
+              <div>
+                <label htmlFor="time">{text}</label>
+                <input
+                  type="number"
+                  name="time"
+                  value={this.state.time}
+                  onChange={this.handleChange}
+                  id="time"
+                  placeholder="Enter minutes"
+                />
+              </div>
+              <button type="submit">Submit Time</button>
+            </form>
+            <p>or</p>
+            <form onSubmit={this.handleSubmit} name="pomodoro">
+              <button type="submit">Quick Add: 25min</button>
+            </form>
           </div>
         )}
         {timerTime > 0 && (
-          <div>
-            <div className="time-list-box">
-              <form
-                className="time-form"
-                onSubmit={this.handleSubmit}
-                name="timer-time"
-              >
-                <div>
-                  <label htmlFor="timer-time">{text}</label>
-                  <input
-                    type="hidden"
-                    name="timer-time"
-                    value={this.props.timerTime}
-                    // onChange={this.handleChange}
-                    id="timer-time"
-                  />
-                </div>
-                <button type="submit">Submit Time</button>
-              </form>
-            </div>
+          <div className="time-list-box">
+            <form
+              className="time-form"
+              onSubmit={this.handleSubmit}
+              name="timer-time"
+            >
+              <div>
+                <label htmlFor="timer-time">{text}</label>
+                <input
+                  type="hidden"
+                  name="timer-time"
+                  value={this.props.timerTime}
+                  // onChange={this.handleChange}
+                  id="timer-time"
+                />
+              </div>
+              <button type="submit">Submit Time</button>
+            </form>
           </div>
         )}
       </div>
