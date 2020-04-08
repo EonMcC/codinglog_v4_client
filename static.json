@@ -5,7 +5,7 @@
   },
   "proxies": {
     "/api": {
-      "origin": "https://codinglog-v4-server.herokuapp.com"
+      "origin": "https://codinglog-v4-server.herokuapp.com/api"
     }
   }
 }
