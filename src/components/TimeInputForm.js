@@ -35,8 +35,7 @@ class TimeInputForm extends Component {
       this.props
         .updateLanguageTime(this.props._id, combinedTime)
         .then(this.props.fetchLanguages())
-        .then(this.setState({ time: "" }))
-        .then(this.props.history.push("/"));
+        .then(this.setState({ time: "" }));
     } else {
       return;
     }

@@ -21,7 +21,7 @@ const Homepage = ({ currentUser, history }) => {
       <h2>Welcome, {currentUser.user.username}</h2>
       <div className="big-btn-wrapper">
         <Timer history={history} />
-        <Link to="/manual-list">Manual Input</Link>
+        <Link to="/manual-list">Add Time</Link>
         <Link to="/languages">Show Languages</Link>
         <Link to="/languageform">Add New Language</Link>
       </div>

@@ -52,34 +52,49 @@ class Navbar extends Component {
   };
 
   render() {
+    const togglePicker = () => {
+      if (document.location.href === "http://localhost:3000/") {
+        return (
+          <div className="color-picker-container">
+            <label htmlFor="color-picker">Choose theme:</label>
+            <input
+              className="color-picker-box"
+              type="color"
+              name="color-picker"
+              value={this.state.mainColor}
+              onChange={this.changeTheme}
+            ></input>
+          </div>
+        );
+      } else {
+        return (
+          <div className="navbar-links">
+            <Link to="/manual-list">Add Time</Link>
+            <Link to="/languages">| Show Languages</Link>
+          </div>
+        );
+      }
+    };
     return (
       <div className="navbar">
         <div className="navbar-links">
-          <Link to="/">Home |</Link>
+          <Link to="/">Home</Link>
           {this.props.currentUser.isAuthenticated && (
             <Link to="/" onClick={this.logout}>
-              Log Out |
+              | Log Out
             </Link>
           )}
           {this.props.currentUser.isAuthenticated && (
-            <a onClick={this.handleClickDelete}>Delete Account</a>
+            <a onClick={this.handleClickDelete}>| Delete Account</a>
           )}
         </div>
-
         <Link to="/" className="header-link">
           Codinglog v.4
         </Link>
-
-        <div className="color-picker-container">
-          <label htmlFor="color-picker">Choose theme:</label>
-          <input
-            className="color-picker-box"
-            type="color"
-            name="color-picker"
-            value={this.state.mainColor}
-            onChange={this.changeTheme}
-          ></input>
-        </div>
+        {this.props.currentUser.isAuthenticated && togglePicker()}
+        {!this.props.currentUser.isAuthenticated && (
+          <p>Sign in below to begin</p>
+        )}
       </div>
     );
   }
