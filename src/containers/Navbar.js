@@ -52,7 +52,11 @@ class Navbar extends Component {
 
   render() {
     const togglePicker = () => {
-      if (document.location.href === "http://localhost:3000/") {
+      if (
+        document.location.href ===
+          "https://codinglog-v4-client.herokuapp.com/" ||
+        document.location.href === "http://localhost:3000/"
+      ) {
         return (
           <div className="color-picker-container">
             <label htmlFor="color-picker">Choose theme:</label>
