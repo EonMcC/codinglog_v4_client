@@ -29,7 +29,6 @@ class TimeInputForm extends Component {
         combinedTime = this.props.time + this.state.time * 60000;
       } else if (event.target.name === "timer-time") {
         combinedTime = this.props.time + this.props.timerTime;
-        this.props.history.push("/");
       } else {
         combinedTime = Number(this.props.time + 1500000);
       }
@@ -37,7 +36,7 @@ class TimeInputForm extends Component {
         .updateLanguageTime(this.props._id, combinedTime)
         .then(this.props.fetchLanguages())
         .then(this.setState({ time: "" }))
-        .then(console.log("End"));
+        .then(this.props.history.push("/languages"));
     } else {
       return;
     }

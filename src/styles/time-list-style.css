@@ -61,6 +61,12 @@
 .time-list-box button:hover {
   background: var(--hover), var(--main);
 }
+.time-list-box button:active {
+  transform: translateY(2px);
+}
+.time-list-box button:focus {
+  outline: none;
+}
 
 .time-list-box p {
   margin: 1%;
