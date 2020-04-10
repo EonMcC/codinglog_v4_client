@@ -17,7 +17,7 @@ const LanguageItem = ({ text, totalTime, removeLanguage, reloadLanguages }) => {
       {timeMins >= 2 && <p>hours</p>}
       {timeMins < 1 && <p>less than an hour, keep coding!</p>}
 
-      <button onClick={removeReload}>Delete</button>
+      <button onClick={removeReload}>Delete Language</button>
     </div>
   );
 };
