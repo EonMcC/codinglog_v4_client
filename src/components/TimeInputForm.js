@@ -7,7 +7,7 @@ class TimeInputForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: ""
+      time: "",
     };
   }
 
@@ -15,13 +15,13 @@ class TimeInputForm extends Component {
     this.props.addTimerTime(0);
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
-      [event.target.name]: Number(event.target.value)
+      [event.target.name]: Number(event.target.value),
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     if (event.target.value !== 0) {
       let combinedTime = 0;
@@ -29,13 +29,15 @@ class TimeInputForm extends Component {
         combinedTime = this.props.time + this.state.time * 60000;
       } else if (event.target.name === "timer-time") {
         combinedTime = this.props.time + this.props.timerTime;
+        this.props.history.push("/");
       } else {
         combinedTime = Number(this.props.time + 1500000);
       }
       this.props
         .updateLanguageTime(this.props._id, combinedTime)
         .then(this.props.fetchLanguages())
-        .then(this.setState({ time: "" }));
+        .then(this.setState({ time: "" }))
+        .then(console.log("End"));
     } else {
       return;
     }
@@ -84,7 +86,6 @@ class TimeInputForm extends Component {
                   type="hidden"
                   name="timer-time"
                   value={this.props.timerTime}
-                  // onChange={this.handleChange}
                   id="timer-time"
                 />
               </div>
@@ -100,12 +101,12 @@ class TimeInputForm extends Component {
 function mapStateToProps(state) {
   return {
     errors: state.errors,
-    timerTime: state.timerTime
+    timerTime: state.timerTime,
   };
 }
 
 export default connect(mapStateToProps, {
   updateLanguageTime,
   fetchLanguages,
-  addTimerTime
+  addTimerTime,
 })(TimeInputForm);
