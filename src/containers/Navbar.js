@@ -10,20 +10,20 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainColor: ""
+      mainColor: "",
     };
   }
 
   componentDidMount = async () => {
-    this.props.getTheme().then(res => {
+    this.props.getTheme().then((res) => {
       this.setState({
-        mainColor: res.theme
+        mainColor: res.theme,
       });
       this.setTheme();
     });
   };
 
-  logout = event => {
+  logout = (event) => {
     event.preventDefault();
     this.props.logout();
     this.props.history.push("/");
@@ -33,11 +33,10 @@ class Navbar extends Component {
     document.body.style.setProperty("--main", this.state.mainColor);
   };
 
-  changeTheme = event => {
+  changeTheme = (event) => {
     let theme = event.target.value;
     document.body.style.setProperty("--main", theme);
     this.setState({ mainColor: theme });
-
     this.props.patchTheme(theme);
   };
 
@@ -103,7 +102,7 @@ class Navbar extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    theme: state.theme
+    theme: state.theme,
   };
 }
 

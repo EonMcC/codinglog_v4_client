@@ -5,8 +5,13 @@ const LanguageItem = ({ text, totalTime, removeLanguage, reloadLanguages }) => {
   const timeMins = Math.round(totalTime / 3600000);
 
   const removeReload = async () => {
-    await removeLanguage();
-    reloadLanguages();
+    let result = window.confirm(
+      "Warning! You will lose all time recorded for this language. Are you sure want to delete?"
+    );
+    if (result) {
+      await removeLanguage();
+      reloadLanguages();
+    }
   };
 
   return (
