@@ -13,6 +13,12 @@ const Homepage = ({ currentUser, history }) => {
           <Link to="/signin">Sign-in</Link>
           <Link to="/signup">Sign-up</Link>
         </div>
+        <p className="disclaimer">
+          ### Please note that Codinglog v4 is running on a free Heroku server
+          where the dynos go to sleep after 30 minutes of inactivity. The dynos
+          take a few seconds to start up when called on which will result in a
+          slower than normal user experience - please be patient. ###
+        </p>
       </div>
     );
   }
@@ -25,6 +31,12 @@ const Homepage = ({ currentUser, history }) => {
         <Link to="/languages">Show Languages</Link>
         <Link to="/languageform">Add New Language</Link>
       </div>
+      <p className="disclaimer">
+        ### Please note that Codinglog v4 is running on a free Heroku server
+        where the dynos go to sleep after 30 minutes of inactivity. The dynos
+        take a few seconds to start up when called on which will result in a
+        slower than normal user experience - please be patient. ###
+      </p>
     </div>
   );
 };
