@@ -41,14 +41,25 @@
   font-size: 0.8rem;
 }
 
+.language-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.language-item button a {
+  text-decoration: none;
+  color: var(--light-text);
+}
+
 .language-item button {
   border-radius: 25px;
   cursor: pointer;
   background-color: var(--main);
   color: var(--light-text);
-  padding: 2%;
+  padding: 5%;
   margin-top: 10%;
-  width: 50%;
+  width: 100%;
 }
 .language-item button:hover {
   background: var(--hover), var(--main);
