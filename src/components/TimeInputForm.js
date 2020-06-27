@@ -82,6 +82,7 @@ class TimeInputForm extends Component {
             >
               <div>
                 <label htmlFor="timer-time">{text}</label>
+                <hr className="language-split"></hr>
                 <input
                   type="hidden"
                   name="timer-time"

@@ -23,3 +23,30 @@
 .timer-btn-start:hover {
   background: var(--hover), var(--main);
 }
+
+/* .timer-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+} */
+
+.timer-overlay {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border: solid 10px white;
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

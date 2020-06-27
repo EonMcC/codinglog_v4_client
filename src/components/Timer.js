@@ -12,7 +12,8 @@ class Timer extends Component {
       offset: null,
       isOn: false,
       pageRefreshed: false,
-      formattedTime: "00:00"
+      formattedTime: "00:00",
+      overlay: false,
     };
   }
 
@@ -27,7 +28,7 @@ class Timer extends Component {
           return true;
         }
       })
-      .then(res => {
+      .then((res) => {
         if (res === true) {
           this.setState({ pageRefreshed: true });
           this.start();
@@ -64,6 +65,7 @@ class Timer extends Component {
   stop = () => {
     let { interval, isOn } = this.state;
     if (isOn) {
+      this.setState({ overlay: true });
       clearInterval(interval);
       this.setState({ interval: null });
       this.setState({ isOn: false });
@@ -72,12 +74,13 @@ class Timer extends Component {
         this.props.addTimerTime(timeDiff);
         this.props.startTimer(0);
         this.setState({ pageRefreshed: false });
+        this.setState({ overlay: false });
         this.props.history.push("/manual-list");
       });
     }
   };
 
-  timeFormatter = timeMs => {
+  timeFormatter = (timeMs) => {
     let time = new Date(timeMs);
     let tzOffset = new Date().getTimezoneOffset() / 60;
     let hours = Number(time.getHours() + tzOffset).toString();
@@ -104,17 +107,21 @@ class Timer extends Component {
   render() {
     return (
       <div className="timer">
-        {!this.state.isOn && (
+        {this.state.overlay && (
+          <div>
+            <p>Please Wait</p>
+            <div className="timer-overlay"></div>
+          </div>
+        )}
+        {!this.state.isOn && this.state.overlay === false && (
           <button className="timer-btn-start" onClick={this.start}>
             Start Timer
           </button>
         )}
-        {this.state.isOn && (
+        {this.state.isOn && this.state.overlay === false && (
           <button className="timer-btn-stop" onClick={this.stop}>
             Stop Timer
             <br />
-            <br />
-            Time:
             <br />
             {this.state.formattedTime}
           </button>
@@ -128,7 +135,7 @@ class Timer extends Component {
 
 function mapStateToProps(state) {
   return {
-    errors: state.errors
+    errors: state.errors,
   };
 }
 
