@@ -51,33 +51,6 @@ class Navbar extends Component {
   };
 
   render() {
-    const togglePicker = () => {
-      if (
-        document.location.href ===
-          "https://codinglog-v4-client.herokuapp.com/" ||
-        document.location.href === "http://localhost:3000/"
-      ) {
-        return (
-          <div className="color-picker-container">
-            <label htmlFor="color-picker">Choose theme:</label>
-            <input
-              className="color-picker-box"
-              type="color"
-              name="color-picker"
-              value={this.state.mainColor}
-              onChange={this.changeTheme}
-            ></input>
-          </div>
-        );
-      } else {
-        return (
-          <div className="navbar-links">
-            <Link to="/manual-list">Add Time</Link>
-            <Link to="/languages">| Show Languages</Link>
-          </div>
-        );
-      }
-    };
     return (
       <div className="navbar">
         <div className="navbar-links">
@@ -94,7 +67,16 @@ class Navbar extends Component {
         <Link to="/" className="header-link">
           Codinglog v.4
         </Link>
-        {this.props.currentUser.isAuthenticated && togglePicker()}
+        <div className="color-picker-container">
+          <label htmlFor="color-picker">Choose theme:</label>
+          <input
+            className="color-picker-box"
+            type="color"
+            name="color-picker"
+            value={this.state.mainColor}
+            onChange={this.changeTheme}
+          ></input>
+        </div>
         {!this.props.currentUser.isAuthenticated && (
           <p>Sign in below to begin</p>
         )}
