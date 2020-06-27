@@ -53,13 +53,14 @@
 }
 
 .language-item button {
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   background-color: var(--main);
   color: var(--light-text);
   padding: 5%;
   margin-top: 10%;
   width: 100%;
+  border: none;
 }
 .language-item button:hover {
   background: var(--hover), var(--main);

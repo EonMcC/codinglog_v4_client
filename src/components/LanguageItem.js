@@ -22,6 +22,7 @@ const LanguageItem = ({ text, totalTime, removeLanguage, reloadLanguages }) => {
       {timeMins >= 1 && timeMins < 2 && <p>hour</p>}
       {timeMins >= 2 && <p>hours</p>}
       {timeMins < 1 && <p>less than an hour, keep coding!</p>}
+      <hr className="language-split"></hr>
       <div className="language-button-container">
         <button>
           <Link to="/manual-list">Add Time</Link>

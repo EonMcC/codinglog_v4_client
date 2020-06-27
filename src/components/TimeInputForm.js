@@ -64,6 +64,7 @@ class TimeInputForm extends Component {
                   placeholder="Enter minutes"
                 />
               </div>
+              <hr class="language-split"></hr>
               <button type="submit">Submit Time</button>
             </form>
             <p>or</p>

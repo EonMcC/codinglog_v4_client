@@ -52,11 +52,12 @@
 }
 
 .time-list-box button {
-  border-radius: 25px;
+  border-radius: 5px;
   cursor: pointer;
   background-color: var(--main);
   color: var(--light-text);
   font-size: 0.9rem;
+  border: none;
 }
 .time-list-box button:hover {
   background: var(--hover), var(--main);

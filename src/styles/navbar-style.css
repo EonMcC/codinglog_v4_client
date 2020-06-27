@@ -80,6 +80,11 @@
     margin-bottom: 1%;
     text-align: center;
   }
+
+  .navbar-links > *:visited {
+    color: var(--light-text);
+  }
+
   .header-link {
     text-decoration: none;
     color: white;

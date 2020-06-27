@@ -28,12 +28,13 @@
 
 .language-form button {
   font-size: 1.4rem;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   background-color: var(--main);
   color: var(--light-text);
   padding: 2%;
   margin-top: 10%;
+  border: none;
 }
 .language-form button:hover {
   background: var(--hover), var(--main);
