@@ -5,7 +5,7 @@
   --light-text: white;
   --dark-text: #5e5b5b;
   --border: #383838;
-  --shadow: 4px 4px 4px #383838;
+  --shadow: 7px 7px 10px #383838;
 }
 
 body {
@@ -31,4 +31,5 @@ input {
 
 .language-split {
   width: 200px;
+  border: solid white 1px;
 }

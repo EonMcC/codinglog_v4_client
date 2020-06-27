@@ -12,7 +12,7 @@
   background-color: var(--main);
   display: flex;
   flex-direction: column;
-  border: 2px solid var(--border);
+  border: none;
   align-items: center;
   justify-content: center;
   height: 250px;
@@ -23,6 +23,7 @@
   color: var(--light-text);
   text-align: center;
   box-shadow: var(--shadow);
+  border-radius: 10px;
 }
 .language-item:hover {
   background: var(--hover), var(--main);

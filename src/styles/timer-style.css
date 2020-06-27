@@ -1,11 +1,12 @@
 .timer button {
   font-family: inherit;
-  border: 1px solid var(--border);
+  border: none;
   color: var(--light-text);
   font-size: 1.5rem;
   height: 100%;
   width: 100%;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .timer-btn-stop {

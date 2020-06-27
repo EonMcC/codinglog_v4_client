@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 2px var(--border);
+  border-radius: 10px;
   box-shadow: var(--shadow);
   margin: 10px;
 }
