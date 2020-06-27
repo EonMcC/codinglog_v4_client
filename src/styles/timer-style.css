@@ -17,9 +17,8 @@
 }
 
 .timer-btn-start {
-  background-color: #2f882f;
+  background-color: var(--main);
 }
 .timer-btn-start:hover {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    #2f882f;
+  background: var(--hover), var(--main);
 }
