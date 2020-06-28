@@ -45,6 +45,7 @@
 .burger-img {
   font-size: 2.5rem;
   cursor: pointer;
+  color: white;
 }
 .burger-img:hover {
   font-size: 2.5rem;
@@ -78,22 +79,10 @@
 @media only screen and (max-width: 600px) {
   .navbar {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     background-color: var(--main);
     align-items: center;
     color: var(--light-text);
-    justify-content: center;
-    height: 100%;
-  }
-
-  .navbar > * {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .navbar-links {
-    width: 100%;
   }
 
   .navbar-links > * {
@@ -111,17 +100,18 @@
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
-    margin-bottom: 2%;
   }
 
-  .color-picker-container {
+  .burger-menu {
+    position: absolute;
+    height: auto;
+    width: 200px;
+    top: 100px;
+    right: 0;
     display: flex;
-    flex-direction: row;
-    font-size: 0.6rem;
-    width: 100%;
-  }
-
-  .color-picker-box {
-    transform: scale(0.5);
+    flex-direction: column;
+    background-color: var(--main);
+    border-radius: 10px;
+    border: solid white 2px;
   }
 }
