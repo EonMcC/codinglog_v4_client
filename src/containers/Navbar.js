@@ -11,6 +11,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       mainColor: "",
+      burgerVisable: false,
     };
   }
 
@@ -50,32 +51,45 @@ class Navbar extends Component {
     }
   };
 
+  handleBurger = () => {
+    this.setState({ burgerVisable: !this.state.burgerVisable });
+  };
+
   render() {
     return (
       <div className="navbar">
         <div className="navbar-links">
           <Link to="/">Home</Link>
-          {this.props.currentUser.isAuthenticated && (
-            <Link to="/" onClick={this.logout}>
-              | Log Out
-            </Link>
-          )}
-          {this.props.currentUser.isAuthenticated && (
-            <a onClick={this.handleClickDelete}>| Delete Account</a>
-          )}
         </div>
         <Link to="/" className="header-link">
           Codinglog v.4
         </Link>
-        <div className="color-picker-container">
-          <label htmlFor="color-picker">Choose theme:</label>
-          <input
-            className="color-picker-box"
-            type="color"
-            name="color-picker"
-            value={this.state.mainColor}
-            onChange={this.changeTheme}
-          ></input>
+        <div>
+          <h3 className="burger-img" onClick={this.handleBurger}>
+            ☰
+          </h3>
+          {this.state.burgerVisable && (
+            <div className="burger-menu">
+              <div className="color-picker-container">
+                <label htmlFor="color-picker">Theme:</label>
+                <input
+                  className="color-picker-box"
+                  type="color"
+                  name="color-picker"
+                  value={this.state.mainColor}
+                  onChange={this.changeTheme}
+                ></input>
+              </div>
+              {this.props.currentUser.isAuthenticated && (
+                <Link to="/" onClick={this.logout}>
+                  Log Out
+                </Link>
+              )}
+              {this.props.currentUser.isAuthenticated && (
+                <a onClick={this.handleClickDelete}>Delete Account</a>
+              )}
+            </div>
+          )}
         </div>
         {!this.props.currentUser.isAuthenticated && (
           <p>Sign in below to begin</p>

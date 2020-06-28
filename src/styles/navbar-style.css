@@ -1,34 +1,24 @@
 .navbar {
   display: flex;
-  height: 10vh;
+  height: 100px;
   background-color: var(--main);
   align-items: center;
   color: var(--light-text);
   justify-content: center;
   z-index: 10;
+  text-align: center;
 }
 .header-link {
   text-decoration: none;
   color: white;
   font-size: 3rem;
   font-weight: bold;
-}
-
-.navbar > * {
-  flex: 1;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar-links {
-  flex-direction: row;
-  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .navbar-links > * {
   font-size: 1.1rem;
-  margin: 0 1%;
   text-decoration: none;
   cursor: pointer;
 }
@@ -43,7 +33,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-size: 1.1rem;
 }
 
 .color-picker-box {
@@ -51,6 +40,39 @@
   border: none;
   background: var(--light-text);
   transform: scale(0.8);
+}
+
+.burger-img {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.burger-img:hover {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--dark-text);
+}
+
+.burger-menu {
+  position: absolute;
+  height: auto;
+  width: 200px;
+  top: 100px;
+  right: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main);
+  border-radius: 10px;
+  border: solid white 2px;
+}
+
+.burger-menu > * {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 5%;
+}
+.burger-menu > *:hover {
+  color: var(--dark-text);
 }
 
 @media only screen and (max-width: 600px) {
