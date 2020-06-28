@@ -58,9 +58,6 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <div className="navbar-links">
-          <Link to="/">Home</Link>
-        </div>
         <Link to="/" className="header-link">
           Codinglog v.4
         </Link>
@@ -70,8 +67,13 @@ class Navbar extends Component {
           </h3>
           {this.state.burgerVisable && (
             <div className="burger-menu">
+              <Link to="/manual-list">Add Time</Link>
+              <Link to="/languages">Show Times</Link>
+              <Link to="/languageform">Add Language</Link>
               <div className="color-picker-container">
-                <label htmlFor="color-picker">Theme:</label>
+                <label className="color-picker-label" htmlFor="color-picker">
+                  Theme:
+                </label>
                 <input
                   className="color-picker-box"
                   type="color"
