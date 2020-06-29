@@ -77,9 +77,17 @@
   cursor: pointer;
   text-decoration: none;
   margin: 5%;
+  z-index: 10;
 }
 .burger-menu > *:hover {
   color: var(--dark-text);
+}
+
+.screen-cover {
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  z-index: 9;
 }
 
 @media only screen and (max-width: 600px) {

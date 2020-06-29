@@ -12,6 +12,7 @@ class Navbar extends Component {
     this.state = {
       mainColor: "",
       burgerVisable: false,
+      screenCover: false,
     };
   }
 
@@ -53,11 +54,15 @@ class Navbar extends Component {
 
   handleBurger = () => {
     this.setState({ burgerVisable: !this.state.burgerVisable });
+    this.setState({ screenCover: !this.state.screenCover });
   };
 
   render() {
     return (
       <div className="navbar">
+        {this.state.screenCover === true && (
+          <div className="screen-cover" onClick={this.handleBurger}></div>
+        )}
         <Link to="/" className="header-link">
           Codinglog v.4
         </Link>
