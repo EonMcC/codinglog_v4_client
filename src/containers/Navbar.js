@@ -66,38 +66,37 @@ class Navbar extends Component {
         <Link to="/" className="header-link">
           Codinglog v.4
         </Link>
-        <div>
-          <h3 className="burger-img" onClick={this.handleBurger}>
-            ☰
-          </h3>
-          {this.state.burgerVisable && (
-            <div className="burger-menu">
-              <Link to="/manual-list">Add Time</Link>
-              <Link to="/languages">Show Times</Link>
-              <Link to="/languageform">Add Language</Link>
-              <div className="color-picker-container">
-                <label className="color-picker-label" htmlFor="color-picker">
-                  Theme:
-                </label>
-                <input
-                  className="color-picker-box"
-                  type="color"
-                  name="color-picker"
-                  value={this.state.mainColor}
-                  onChange={this.changeTheme}
-                ></input>
-              </div>
-              {this.props.currentUser.isAuthenticated && (
-                <Link to="/" onClick={this.logout}>
-                  Log Out
-                </Link>
-              )}
-              {this.props.currentUser.isAuthenticated && (
-                <a onClick={this.handleClickDelete}>Delete Account</a>
-              )}
+        <h3 className="burger-img" onClick={this.handleBurger}>
+          ☰
+        </h3>
+        {this.state.burgerVisable && (
+          <div className="burger-menu">
+            <Link to="/">Home</Link>
+            <Link to="/manual-list">Add Time</Link>
+            <Link to="/languages">Show Times</Link>
+            <Link to="/languageform">Add Language</Link>
+            <div className="color-picker-container">
+              <label className="color-picker-label" htmlFor="color-picker">
+                Theme:
+              </label>
+              <input
+                className="color-picker-box"
+                type="color"
+                name="color-picker"
+                value={this.state.mainColor}
+                onChange={this.changeTheme}
+              ></input>
             </div>
-          )}
-        </div>
+            {this.props.currentUser.isAuthenticated && (
+              <Link to="/" onClick={this.logout}>
+                Log Out
+              </Link>
+            )}
+            {this.props.currentUser.isAuthenticated && (
+              <a onClick={this.handleClickDelete}>Delete Account</a>
+            )}
+          </div>
+        )}
         {!this.props.currentUser.isAuthenticated && (
           <p>Sign in below to begin</p>
         )}
