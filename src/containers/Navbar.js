@@ -11,7 +11,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       mainColor: "",
-      burgerVisable: false,
+      burgerClass: "burger-menu-closed",
       screenCover: false,
     };
   }
@@ -53,7 +53,9 @@ class Navbar extends Component {
   };
 
   handleBurger = () => {
-    this.setState({ burgerVisable: !this.state.burgerVisable });
+    this.state.burgerClass === "burger-menu-closed"
+      ? this.setState({ burgerClass: "burger-menu-open" })
+      : this.setState({ burgerClass: "burger-menu-closed" });
     this.setState({ screenCover: !this.state.screenCover });
   };
 
@@ -69,34 +71,32 @@ class Navbar extends Component {
         <h3 className="burger-img" onClick={this.handleBurger}>
           ☰
         </h3>
-        {this.state.burgerVisable && (
-          <div className="burger-menu">
-            <Link to="/">Home</Link>
-            <Link to="/manual-list">Add Time</Link>
-            <Link to="/languages">Show Times</Link>
-            <Link to="/languageform">Add Language</Link>
-            <div className="color-picker-container">
-              <label className="color-picker-label" htmlFor="color-picker">
-                Theme:
-              </label>
-              <input
-                className="color-picker-box"
-                type="color"
-                name="color-picker"
-                value={this.state.mainColor}
-                onChange={this.changeTheme}
-              ></input>
-            </div>
-            {this.props.currentUser.isAuthenticated && (
-              <Link to="/" onClick={this.logout}>
-                Log Out
-              </Link>
-            )}
-            {this.props.currentUser.isAuthenticated && (
-              <a onClick={this.handleClickDelete}>Delete Account</a>
-            )}
+        <div className={this.state.burgerClass}>
+          <Link to="/">Home</Link>
+          <Link to="/manual-list">Add Time</Link>
+          <Link to="/languages">Show Times</Link>
+          <Link to="/languageform">Add Language</Link>
+          <div className="color-picker-container">
+            <label className="color-picker-label" htmlFor="color-picker">
+              Theme:
+            </label>
+            <input
+              className="color-picker-box"
+              type="color"
+              name="color-picker"
+              value={this.state.mainColor}
+              onChange={this.changeTheme}
+            ></input>
           </div>
-        )}
+          {this.props.currentUser.isAuthenticated && (
+            <Link to="/" onClick={this.logout}>
+              Log Out
+            </Link>
+          )}
+          {this.props.currentUser.isAuthenticated && (
+            <a onClick={this.handleClickDelete}>Delete Account</a>
+          )}
+        </div>
         {!this.props.currentUser.isAuthenticated && (
           <p>Sign in below to begin</p>
         )}
